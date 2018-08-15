@@ -1,5 +1,7 @@
+
+// Game-test.js
 const { assert } = require('chai');
-const Game = require('../lib/Game');
+const Game = require ('../lib/Game')
 
 const ctx = {
   canvas: {
@@ -11,6 +13,7 @@ const ctx = {
 describe('Game', () => {
   it('should end the game if block collides with wall', () => {
     // setup
+
     const game = new Game(ctx);
     const block = game.blocks[0];
 
@@ -30,3 +33,4 @@ describe('Game', () => {
   // it('should be able to move', () => {})
   // it('should be able to changeDirection', () => {})
 })
+
