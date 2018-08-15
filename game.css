@@ -1,5 +1,38 @@
+* {
+  box-sizing: border-box;]
+}
+
 #game {
   border: 1px dashed;
   margin: auto;
   display: block;
+}
+
+.header {
+  display: grid;
+  grid-template-rows: 100px 100px;
+}
+
+h1 {
+  grid-row: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.game-data {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 600px;
+  justify-content: space-between;
+  grid-row: 2;
+}
+
+h3 {
+  justify-self: center;
+}
+
+footer {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  width: 600px;
 }
