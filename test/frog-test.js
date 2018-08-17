@@ -10,13 +10,13 @@ describe ('Frog', () => {
     //assertion
     assert.equal(frog.lives, 3)
   })
-  it.skip('after dying three times the game should be over', () => {
+  it('after dying three times the game should be over', () => {
     //setup
     const frog = new Frog(300, 550, 40, 40, 'green', 'pink');
     //execution
-    isDead();
-    isDead();
-    isDead();
+    frog.isDead();
+    frog.isDead();
+    frog.isDead();
     //assertion
     assert.isTrue(game.gameOver);
   })
@@ -26,28 +26,28 @@ describe ('Frog', () => {
     frogMoves(down);
     assert.equal(frog.y, 551)
 
-    const frog = new Frog(300, 550, 40, 40, 'green', 'pink');
+    let frog2 = new Frog(300, 550, 40, 40, 'green', 'pink');
     frogMoves(up);
-    assert.equal(frog.y, 549);
+    assert.equal(frog2.y, 549);
 
-    const frog = new Frog(300, 550, 40, 40, 'green', 'pink');
+    let frog3 = new Frog(300, 550, 40, 40, 'green', 'pink');
     frogMoves(left);
-    assert.equal(frog.x, 299)
+    assert.equal(frog3.x, 299)
 
-    const frog = new Frog(300, 550, 40, 40, 'green', 'pink');
+    let frog4 = new Frog(300, 550, 40, 40, 'green', 'pink');
     frogMoves(right);
-    assert.equal(frog.x, 301);
+    assert.equal(frog4.x, 301);
   })
-  
+
   it.skip('it should recognize when it hits a wall', () => {
     //setup
-    const frog = new Frog(0, 100, 40, 40, 'green', 'pink');
+    let frog = new Frog(0, 100, 40, 40, 'green', 'pink');
 
     isCollidingWithWall();
 
     assert.equal(isCollidingWithWall, true);
 
-    const frog = new Frog(600, 100, 40, 40, 'green', 'pink');
+    let frog2 = new Frog(600, 100, 40, 40, 'green', 'pink');
 
     isCollidingWithWall();
 
