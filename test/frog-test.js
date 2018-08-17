@@ -13,31 +13,33 @@ describe ('Frog', () => {
   it.skip('after dying three times the game should be over', () => {
     //setup
     const frog = new Frog(300, 550, 40, 40, 'green', 'pink');
+    const game = new Game();
     //execution
-    isDead();
-    isDead();
-    isDead();
+    frog.isDead();
+    frog.isDead();
+    frog.isDead();
     //assertion
     assert.isTrue(game.gameOver);
   })
-  it.skip('it should move move the same direction as the arrow pressed', () => {
-    //setup
-    const frog = new Frog(300, 550, 40, 40, 'green', 'pink');
-    frogMoves(down);
-    assert.equal(frog.y, 551)
+  // it.skip('it should move move the same direction as the arrow pressed', () => {
+  //   //setup
+  //   const frog = new Frog(300, 550, 40, 40, 'green', 'pink');
+  //   e.key = 'ArrowDown'
+  //   handleKeyPress(e);
+  //   assert.equal(frog.y, 551)
 
-    const frog = new Frog(300, 550, 40, 40, 'green', 'pink');
-    frogMoves(up);
-    assert.equal(frog.y, 549);
+  //   const frog = new Frog(300, 550, 40, 40, 'green', 'pink');
+  //   frogMoves(up);
+  //   assert.equal(frog.y, 549);
 
-    const frog = new Frog(300, 550, 40, 40, 'green', 'pink');
-    frogMoves(left);
-    assert.equal(frog.x, 299)
+  //   const frog = new Frog(300, 550, 40, 40, 'green', 'pink');
+  //   frogMoves(left);
+  //   assert.equal(frog.x, 299)
 
-    const frog = new Frog(300, 550, 40, 40, 'green', 'pink');
-    frogMoves(right);
-    assert.equal(frog.x, 301);
-  })
+  //   const frog = new Frog(300, 550, 40, 40, 'green', 'pink');
+  //   frogMoves(right);
+  //   assert.equal(frog.x, 301);
+  // })
   
   it.skip('it should recognize when it hits a wall', () => {
     //setup
