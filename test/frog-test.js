@@ -13,6 +13,7 @@ describe ('Frog', () => {
   it('after dying three times the game should be over', () => {
     //setup
     const frog = new Frog(300, 550, 40, 40, 'green', 'pink');
+    const game = new Game();
     //execution
     frog.isDead();
     frog.isDead();
@@ -20,11 +21,12 @@ describe ('Frog', () => {
     //assertion
     assert.isTrue(game.gameOver);
   })
-  it.skip('it should move move the same direction as the arrow pressed', () => {
-    //setup
-    const frog = new Frog(300, 550, 40, 40, 'green', 'pink');
-    frogMoves(down);
-    assert.equal(frog.y, 551)
+  // it.skip('it should move move the same direction as the arrow pressed', () => {
+  //   //setup
+  //   const frog = new Frog(300, 550, 40, 40, 'green', 'pink');
+  //   e.key = 'ArrowDown'
+  //   handleKeyPress(e);
+  //   assert.equal(frog.y, 551)
 
     let frog2 = new Frog(300, 550, 40, 40, 'green', 'pink');
     frogMoves(up);

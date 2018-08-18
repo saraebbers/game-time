@@ -1,5 +1,22 @@
 * {
-  box-sizing: border-box;]
+  box-sizing: border-box;
+  width: 640px;
+}
+
+:root {
+  --frog-green: rgb(87 144 44);
+  --frog-yellow: rgb(240 252 117);
+  --frog-pink: rgb(238 149 151);
+  --water-blue: rgb(56 141 236);
+  --log-brown: rgb(116 89 69);
+  --turtle-color: rgb(75 71 38);
+  --road-black: rgb(48 42 35);
+  --road-yellow: rgb(252 248 86);
+  --road-white: rgb(254 255 255);
+  --lawn-green: rgb(87 144 44);
+  --car-red: rgb(216 55 49);
+  --truck-teal: rgb(57 106 175);
+  --taxi-yellow: rgb(229 196 65);
 }
 
 #game {
@@ -22,7 +39,7 @@ h1 {
 .game-data {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  width: 600px;
+  /*width: 600px;*/
   justify-content: space-between;
   grid-row: 2;
 }
@@ -35,4 +52,9 @@ footer {
   display: grid;
   grid-template-columns: 1fr 2fr;
   width: 600px;
+}
+
+canvas {
+  background: var(--road-black);
+  border: 20px solid var(--frog-green);
 }
