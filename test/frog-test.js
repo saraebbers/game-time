@@ -18,25 +18,10 @@ describe ('Frog', () => {
     frog.isDead();
     frog.isDead();
     //assertion
-    assert.isTrue(game.gameOver);
+    assert.equal(frog.lives, 0);
   })
-  it.skip('it should move move the same direction as the arrow pressed', () => {
-    //setup
-    const frog = new Frog(300, 550, 40, 40, 'green', 'pink');
-    frogMoves(down);
-    assert.equal(frog.y, 551)
-
-    let frog2 = new Frog(300, 550, 40, 40, 'green', 'pink');
-    frogMoves(up);
-    assert.equal(frog2.y, 549);
-
-    let frog3 = new Frog(300, 550, 40, 40, 'green', 'pink');
-    frogMoves(left);
-    assert.equal(frog3.x, 299)
-
-    let frog4 = new Frog(300, 550, 40, 40, 'green', 'pink');
-    frogMoves(right);
-    assert.equal(frog4.x, 301);
+  it('it should move move the same direction as the arrow pressed', () => {
+    
   })
 
   it.skip('it should recognize when it hits a wall', () => {
