@@ -2,19 +2,15 @@ const { assert } = require('chai');
 const Log = require ('../lib/logs');
 
 describe ('Log', () => {
+  let log;
+
+
   beforeEach( () => {
-    let log = new Log()
-  });
-  it('Should be function', () => {
-    //setup
-    //execution
+    log = new Log(0, 30, 10, 10, 'pink');
 
-    //assertion
-
-    assert.isFunction()
-  });
-  it.skip('Should instantiate our good friend Log', () =>{
+  it('Should instantiate our good friend Log', () =>{
+    
     assert.isObject(log);
-  })
+  });
 
-}
+});
