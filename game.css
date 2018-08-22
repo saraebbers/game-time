@@ -4,6 +4,7 @@
 
 body {
   width: 600px;
+  background-image: url('images/marcela-r-432403-unsplash.jpg') no-repeat center center fixed;
 }
 
 :root {
