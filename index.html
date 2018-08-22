@@ -7,23 +7,19 @@
 </head>
 <body>
   <header class='header'>
-    <h1>Frogger</h1>
-    <section class='game-data'>
-      <h3>Number of Frogs</h3>
-      <h3>Current Level</h3>
-      <h3>Score</h3>
+    <section class = header-form>
+      <h1>Frogger</h1>
+      <form class='reset-form'>
+        <div class="reset-button">
+        <input type=submit  value= 'New Game'>
+        </div>
+      </form>
     </section>
-    <form class='reset-form'>
-      <div class="reset-button">
-      <input type=submit  value= 'Reset'>
-      </div>
-    </form>
+    <h3>Number of Frogs</h3>
+    <h3>Current Level</h3>
+    <h3>Score</h3>
   </header>
   <canvas id="game" width="600" height="600"></canvas>
-  <footer class='footer'>
-    <h3>Options</h3>
-    <h3>Hold spot for Timer</h3>
-  </footer>
   <script src="main.bundle.js"></script>
 </body>
 </html>

@@ -3,8 +3,16 @@
 }
 
 body {
-  width: 600px;
-  background-image: url('images/marcela-r-432403-unsplash.jpg') no-repeat center center fixed;
+  background: url('images/marcela-r-432403-unsplash.jpg') no-repeat center center fixed;
+  background-size: cover;
+  display: grid;
+  justify-self: center;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas: "b . a"
+                       "b . .";
+  margin: 0;
+  grid-template-rows: 280px 1fr;
+  min-width: 900px;
 }
 
 :root {
@@ -23,52 +31,55 @@ body {
   --taxi-yellow: rgb(229 196 65);
 }
 h1 {
-  grid-row: 1;
-  display: flex;
-  justify-content: center;
+  margin: 0;
+  grid-column-start: span 2;
+  justify-self: center;
+  align-self: center;
+  min-width: 300;
 }
 input[type="submit"] {
-    border: 1px solid black;
-    border-radius: 12px;
+  border: 6px solid cornflowerblue;
+  border-radius: 12px;
+  background: white;
+  padding: 10px;
+  font-family: sans-serif;
+  font-weight: bold;
+  color: cornflowerblue;
 }
 h3 {
-  justify-self: center;
+  margin: 0;
+  align-self: center;
 }
-
-footer {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  width: 600px;
-}
-
 canvas {
   background: var(--road-black);
   border: 20px solid var(--frog-green);
+  grid-column-start: 0;
+  grid-area: : b;
 }
-
+.header {
+  display: grid;
+  grid-area: a;
+  background: white;
+  padding: 10px;
+  border: 5px solid green;
+  background: rgb(87 144 44);
+  color: white;
+  border-radius: 20px;
+}
+.header-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.reset-form {
+    grid-column-start: span 2;
+    justify-self: center;
+    align-self: center;
+}
 #game {
   border: 1px dashed;
   margin: auto;
   display: block;
 }
-
-.header {
-  display: grid;
-  grid-template-rows: 100px 100px 50px;
-}
-
-.game-data {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  /*width: 600px;*/
-  justify-content: space-between;
-  grid-row: 2;
-}
-.reset-form {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  justify-self: center;
-}
-.reset-button {
-  grid-column-start: 2;
+#game {
+  grid-area: b;
 }
