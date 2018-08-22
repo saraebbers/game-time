@@ -4,6 +4,7 @@
 
 body {
   width: 600px;
+  background-image: url('images/marcela-r-432403-unsplash.jpg') no-repeat center center fixed;
 }
 
 :root {
@@ -21,32 +22,15 @@ body {
   --truck-teal: rgb(57 106 175);
   --taxi-yellow: rgb(229 196 65);
 }
-
-#game {
-  border: 1px dashed;
-  margin: auto;
-  display: block;
-}
-
-.header {
-  display: grid;
-  grid-template-rows: 100px 100px;
-}
-
 h1 {
   grid-row: 1;
   display: flex;
   justify-content: center;
 }
-
-.game-data {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  /*width: 600px;*/
-  justify-content: space-between;
-  grid-row: 2;
+input[type="submit"] {
+    border: 1px solid black;
+    border-radius: 12px;
 }
-
 h3 {
   justify-self: center;
 }
@@ -60,4 +44,31 @@ footer {
 canvas {
   background: var(--road-black);
   border: 20px solid var(--frog-green);
+}
+
+#game {
+  border: 1px dashed;
+  margin: auto;
+  display: block;
+}
+
+.header {
+  display: grid;
+  grid-template-rows: 100px 100px 50px;
+}
+
+.game-data {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  /*width: 600px;*/
+  justify-content: space-between;
+  grid-row: 2;
+}
+.reset-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-self: center;
+}
+.reset-button {
+  grid-column-start: 2;
 }
