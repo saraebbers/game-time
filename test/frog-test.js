@@ -65,6 +65,27 @@ describe ('Frog', () => {
     assert.isTrue(frog.isCollidingWithWall(ctx.canvas.width, ctx.canvas.height));
 
   })
+  it('it should not be able to jump beyond wall', () => {
+    let frog = new Frog (0, 100, 40, 40, 'green', 'pink')
+
+    frog.frogMove(frog, 'left');
+    assert.equal(frog.x, 0)
+
+    frog = new Frog(580, 100, 40, 40, 'green', 'pink')
+
+    frog.frogMove(frog, 'right');
+    assert.equal(frog.x, 580);
+
+    frog = new Frog(100, 0, 40, 40, 'green', 'pink');
+
+    frog.frogMove(frog, 'up');
+    assert.equal(frog.y, 0);
+
+    frog = new Frog(100, 600, 40, 40, 'green', 'pink');
+
+    frog.frogMove(frog, 'down');
+    assert.equal(frog.y, 600);
+  })
   it('after dying three times the game should be over', () => {
     //setup
     const frog = new Frog(300, 550, 40, 40, 'green', 'pink');
@@ -76,47 +97,23 @@ describe ('Frog', () => {
     //assertion
     assert.equal(frog.lives, 0);
   })
-
-  it.skip('it should recognize when it hits a wall', () => {
-    //setup
-    let frog = new Frog(0, 100, 40, 40, 'green', 'pink');
-
-    isCollidingWithWall();
-
-    assert.equal(isCollidingWithWall, true);
-
-    let frog2 = new Frog(600, 100, 40, 40, 'green', 'pink');
-
-    isCollidingWithWall();
-
-    assert.equal(isCollidingWithWall, true)
-    //execution
-    //assertion    
-  })
-  it.skip('it should not move further than the wall', () => {
-    const frog = new Frog (0, 100, 40, 40, 'green', 'pink')
-  })
-  it.skip('it should score y < 100 or the end of the game', () => {
+  it.skip('it should move in 50 pixels on arrow press', () => {
     //setup
     //execution
     //assertion    
   })
-  it.skip('should die when hit by a vehicle', () => {
+
+  it.skip('should lose a life when hit by a vehicle', () => {
     //setup
     //execution
     //assertion    
   })
-  it.skip('it should die when not a log or turtle', () => {
+  it.skip('it should ride a log', () => {
     //setup
     //execution
     //assertion    
   })
   it.skip('match the movement the of the log/turtle when colliding', () => {
-    //setup
-    //execution
-    //assertion    
-  })
-  it.skip('it should appear to jump', () => {
     //setup
     //execution
     //assertion    
