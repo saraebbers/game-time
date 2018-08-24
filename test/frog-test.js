@@ -8,7 +8,7 @@ const ctx = {
     height: 600,
   }
 };
-
+const Obstacle = require('../lib/Obstacle');
 
 describe ('Frog', () => {
   it('should be an object', () => {
@@ -27,24 +27,17 @@ describe ('Frog', () => {
     assert.isFunction(frog.isCollidingWith);
     assert.isFunction(frog.frogMove);
     assert.isFunction(frog.draw);
-
   })
   it('should move when a direction pressed',() => {
     const frog = new Frog(300, 550, 40, 40, 'green', 'pink');
     const newGame = new Game();
 
     frog.frogMove(frog, 'right');
-
     assert.equal(frog.x, 350);
-
-
   })
   it('should take properties', () => {
-    //setup
     const frog = new Frog(300, 550, 40, 40, 'green', 'pink');
-    //execution
 
-    //assertion
     assert.equal(frog.lives, 3);
     assert.equal(frog.x, 300);
     assert.equal(frog.y, 550);
@@ -52,11 +45,6 @@ describe ('Frog', () => {
     assert.equal(frog.width, 40);
     assert.equal(frog.color, 'green')
     assert.equal(frog.borderColor, 'pink')
-
-    // =========
-    // animate()
-    // move()
-    // animate()
   })
   it('should collide with walls', () => {
     const frog = new Frog(300, 550, 40, 40, 'green', 'pink');
@@ -86,32 +74,22 @@ describe ('Frog', () => {
     frog.frogMove(frog, 'down');
     assert.equal(frog.y, 600);
   })
+  it('should lose a life when hit by a vehicle', () => {
+    const frog = new Frog(300, 300, 40, 40, 'green', 'pink');
+    const obstacle = [new Obstacle(300, 300, 40, 40)];
+
+    assert.isTrue(frog.isCollidingWith(obstacle, frog))
+  })
   it('after dying three times the game should be over', () => {
-    //setup
     const frog = new Frog(300, 550, 40, 40, 'green', 'pink');
     const game = new Game();
-    //execution
     frog.isDead();
     frog.isDead();
     frog.isDead();
-    //assertion
     assert.equal(frog.lives, 0);
   })
-  it.skip('it should move in 50 pixels on arrow press', () => {
-    //setup
-    //execution
-    //assertion    
-  })
-
-  it.skip('should lose a life when hit by a vehicle', () => {
-    //setup
-    //execution
-    //assertion    
-  })
   it.skip('it should ride a log', () => {
-    //setup
-    //execution
-    //assertion    
+   
   })
   it.skip('match the movement the of the log/turtle when colliding', () => {
     //setup
