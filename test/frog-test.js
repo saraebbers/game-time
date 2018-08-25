@@ -46,13 +46,6 @@ describe ('Frog', () => {
     assert.equal(frog.color, 'green')
     assert.equal(frog.borderColor, 'pink')
   })
-  it('should collide with walls', () => {
-    const frog = new Frog(300, 550, 40, 40, 'green', 'pink');
-    
-    frog.x = ctx.canvas.width;
-    assert.isTrue(frog.isCollidingWithWall(ctx.canvas.width, ctx.canvas.height));
-
-  })
   it('it should not be able to jump beyond wall', () => {
     let frog = new Frog (0, 100, 40, 40, 'green', 'pink')
 
@@ -74,11 +67,28 @@ describe ('Frog', () => {
     frog.frogMove(frog, 'down');
     assert.equal(frog.y, 600);
   })
-  it('should lose a life when hit by a vehicle', () => {
+  it('should detect collision between frog and object', () => {
     const frog = new Frog(300, 300, 40, 40, 'green', 'pink');
     const obstacle = [new Obstacle(300, 300, 40, 40)];
 
     assert.isTrue(frog.isCollidingWith(obstacle, frog))
+  })
+  it('should detect collision with walls', () => {
+    const frog = new Frog(300, 550, 40, 40, 'green', 'pink');
+    
+    frog.x = ctx.canvas.width;
+    assert.isTrue(frog.isCollidingWithWall(ctx.canvas.width, ctx.canvas.height));
+
+  })
+  it('should lose a life when colliding with wall', () => {
+    const frog = new Frog(300, 300, 40, 40, 'green', 'pink');
+    frog.x = ctx.canvas.width;
+    let canvasWidth = 600;
+    let canvasHeight = 600;
+    const game = new Game();
+    game.handleFrog(frog);
+    assert.equal(frog.lives, 2);
+    //test passes, inorder to run test must hard code in canvas height and width into game.js file
   })
   it('after dying three times the game should be over', () => {
     const frog = new Frog(300, 550, 40, 40, 'green', 'pink');
